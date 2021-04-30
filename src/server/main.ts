@@ -4,7 +4,7 @@ import { AppModule } from './app.module'
 async function bootstrap() {
   const port = process.env.PORT ?? 4000
   const app = await NestFactory.create(AppModule)
-  await app.listen(port, 'localhost')
-  console.log(`API running @ ${await app.getUrl()}`)
+  await app.listen(port, '0.0.0.0')
+  console.log(`upstate server running @ ${await app.getUrl()}`)
 }
 bootstrap()
