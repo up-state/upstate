@@ -5,6 +5,6 @@ describe("Another.test.ts", () => {
   it("renders message", () => {
     const wrapper = mount(Another);
 
-    expect(wrapper.text()).toContain("Another");
+    expect(wrapper.text()).toContain("Andother");
   });
 });
