@@ -1,5 +1,5 @@
 {
-  "name": "vite-nest",
+  "name": "upstate",
   "version": "0.0.0",
   "scripts": {
     "dev:server": "npx ts-node-dev --project ./tsconfig.server.json ./src/server/main.ts",
