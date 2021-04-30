@@ -9,7 +9,7 @@
     "build:server": "tsc --project ./tsconfig.server.build.json",
     "prebuild": "rimraf ./dist/*",
     "build": "concurrently npm:build:server npm:build:client",
-    "start": "node ./dist/server/main.js",
+    "start": "NODE_ENV=production node ./dist/server/main.js",
     "serve": "vite preview"
   },
   "dependencies": {
