@@ -11,7 +11,9 @@
     "build": "concurrently npm:build:server npm:build:client",
     "start": "NODE_ENV=production node ./dist/server/main.js",
     "serve": "vite preview",
-    "test:client": "jest src/client"
+    "test:client": "jest src/client",
+    "test:server": "jest src/server",
+    "test:all": "jest src/client && jest src/server"
   },
   "dependencies": {
     "@nestjs/common": "^7.6.15",
