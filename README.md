@@ -13,15 +13,20 @@ TODO
 ### Getting Started
 
 ```sh
+# Freshly install dependencies using the pinned versions in package-lock.json.
 npm ci
+
 # Start backend with frontend. The frontend will be served by a dev server that proxies requests to /api through to the backend server.
 npm run dev
 
-# Build frontend and backend
+# Build frontend and backend for production
 npm run build
 
 # Run in production. Requires `npm run build` to have been run beforehand.
 npm start
+
+# Apply consistent formatting to everything in the src/ folder. Usually this will not be required, as editor integration and git-hooks will cover most use cases.
+npm run prettier:format
 ```
 
 ### Recommended IDE Setup

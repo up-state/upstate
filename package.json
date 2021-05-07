@@ -13,7 +13,8 @@
     "serve": "vite preview",
     "test": "jest src",
     "test:client": "jest src/client",
-    "test:server": "jest src/server"
+    "test:server": "jest src/server",
+    "prettier:format": "prettier --write src"
   },
   "dependencies": {
     "@nestjs/common": "^7.6.15",
