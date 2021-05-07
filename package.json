@@ -42,6 +42,7 @@
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "rimraf": "^2.7.1",
+    "sass": "^1.32.12",
     "ts-jest": "^26.5.5",
     "ts-node-dev": "^1.1.6",
     "tsconfig-paths": "^3.9.0",
@@ -49,7 +50,8 @@
     "vite": "^2.2.3",
     "vue": "^3.0.11",
     "vue-jest": "^5.0.0-alpha.8",
-    "vue-tsc": "^0.0.24"
+    "vue-tsc": "^0.0.24",
+    "vuex": "^4.0.0"
   },
   "husky": {
     "hooks": {
