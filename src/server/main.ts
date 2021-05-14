@@ -19,8 +19,6 @@ async function closeGracefully(signal: NodeJS.Signals) {
   console.log(`*^!@4=> Received signal to terminate: ${signal}`)
 
   await app.close()
-  // In the future:
-  // await db.close()
   process.exit()
 }
 
