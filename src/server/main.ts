@@ -1,15 +1,18 @@
 import { INestApplication } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
+import { runMigrations } from './migrate'
 
 let app: INestApplication
 
 async function bootstrap() {
+  await runMigrations()
   const port = process.env.PORT ?? 4000
   app = await NestFactory.create(AppModule)
   await app.listen(port, '0.0.0.0')
   console.log(`upstate server running @ ${await app.getUrl()}`)
 }
+
 bootstrap()
 
 async function closeGracefully(signal: NodeJS.Signals) {
@@ -20,5 +23,6 @@ async function closeGracefully(signal: NodeJS.Signals) {
   // await db.close()
   process.exit()
 }
+
 process.on('SIGINT', closeGracefully)
 process.on('SIGTERM', closeGracefully)
