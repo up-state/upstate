@@ -4,15 +4,30 @@
 
 TODO
 
+## Running
+
+TODO: Describe how to run the docker image
+
+### Configuration
+
+The upstate application can be configured with environment variables:
+
+- **`PORT`** configures the HTTP port the application will run on. Default is `4000`.
+- **`DATABASE_URL`** configures the Postgres backend. Schema of the URL `postgresql://user:password@host:port/database`
+
 ## Development
 
 ### Requirements
 
 - [Node.js 12](https://nodejs.org/)
+- [Docker](https://www.docker.com/) (and `docker compose`)
 
 ### Getting Started
 
 ```sh
+# When first starting the application, copy the .env file and maybe adjust the pre-filled env vars
+cp .env.example .env
+
 # Freshly install dependencies using the pinned versions in package-lock.json.
 npm ci
 
@@ -49,3 +64,4 @@ Staged code is prettied in a git hook on-commit. Additionally it's recommended t
 
 - Vue.js 3
 - Nest.js
+- Postgres

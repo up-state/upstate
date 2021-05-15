@@ -4,6 +4,7 @@ import path from 'path'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import { DBPool } from './database/db-pool/db-pool.service'
+import { Config } from './config/config.service'
 
 @Module({
   imports: [
@@ -13,6 +14,6 @@ import { DBPool } from './database/db-pool/db-pool.service'
     }),
   ],
   controllers: [AppController],
-  providers: [AppService, DBPool],
+  providers: [AppService, DBPool, Config],
 })
 export class AppModule {}

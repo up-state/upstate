@@ -9,6 +9,7 @@ tests/e2e/screenshots/
 src/server/database/zapatos
 
 # local env files
+.env
 .env.local
 .env.*.local
 
