@@ -1,9 +1,8 @@
-import { Controller, Get } from '@nestjs/common'
+import {Controller, Get} from '@nestjs/common'
 import * as db from 'zapatos/db'
-import { ServerTimeResponse } from '../shared/models'
-import { AppService } from './app.service'
-import { DBPool } from './db-pool/db-pool.service'
-
+import {ServerTimeResponse} from '../shared/models'
+import {AppService} from './app.service'
+import {DBPool} from './database/db-pool/db-pool.service'
 
 
 @Controller()
@@ -14,11 +13,13 @@ export class AppController {
 
   @Get('/users')
   users() {
-    return db.select('user', db.all).run(this.pool)
+    return db.transaction(this.pool, db.IsolationLevel.Serializable, async tx => {
+      return db.select('user', db.all).run(tx)
+    });
   }
 
   @Get('/api/server-time')
   getServerTime(): ServerTimeResponse {
-    return { servertime: new Date().toLocaleString() }
+    return {servertime: new Date().toLocaleString()}
   }
 }

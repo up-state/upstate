@@ -2,10 +2,13 @@
   "name": "upstate",
   "version": "0.0.0",
   "scripts": {
+    "migrate": "node src/server/database/migrate.js",
+    "predev:server": "docker compose up -d && npm run migrate && npx zapatos",
     "dev:server": "npx ts-node-dev --project ./tsconfig.server.json ./src/server/main.ts",
     "dev:client": "vite",
     "dev": "concurrently npm:dev:server npm:dev:client",
     "build:client": "vue-tsc --noEmit && vite build",
+    "prebuild:server": "npm run migrate && npx zapatos",
     "build:server": "tsc --project ./tsconfig.server.build.json",
     "prebuild": "rimraf ./dist/*",
     "build": "concurrently npm:build:server npm:build:client",

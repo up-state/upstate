@@ -6,7 +6,7 @@ tests/e2e/videos/
 tests/e2e/screenshots/
 
 # generated files
-src/server/zapatos
+src/server/database/zapatos
 
 # local env files
 .env.local
