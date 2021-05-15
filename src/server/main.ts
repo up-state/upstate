@@ -1,13 +1,14 @@
 import { INestApplication } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
+import { Config } from './config/config.service'
 
 let app: INestApplication
 
 async function bootstrap() {
-  const port = process.env.PORT ?? 4000
   app = await NestFactory.create(AppModule)
-  await app.listen(port, '0.0.0.0')
+  const config = app.get(Config)
+  await app.listen(config.port, '0.0.0.0')
   console.log(`upstate server running @ ${await app.getUrl()}`)
 }
 
