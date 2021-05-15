@@ -8,4 +8,14 @@ module.exports = {
   moduleNameMapper: {
     '\\.(css|scss|svg|png|jpg)$': 'identity-obj-proxy',
   },
+  globals: {
+    'ts-jest': {
+      tsconfig: {
+        // https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
+        lib: ['ES2019'],
+        module: 'commonjs',
+        target: 'ES2019',
+      },
+    },
+  },
 }
