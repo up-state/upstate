@@ -4,6 +4,7 @@ import * as VueRouter from 'vue-router'
 import App from './App.vue'
 import HelloWorld from './components/HelloWorld.vue'
 import Another from './components/another/Another.vue'
+import { ADD_TODO, store } from './store'
 
 const routes = [
   { path: '/', component: HelloWorld },
@@ -15,6 +16,10 @@ const router = VueRouter.createRouter({
   routes,
 })
 
+store.commit(ADD_TODO, { title: 'Type-safe Vuex mutations' })
+store.commit(ADD_TODO, { title: 'Data model' })
+
 const app = createApp(App)
 app.use(router)
+app.use(store)
 app.mount('#app')

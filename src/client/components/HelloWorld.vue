@@ -7,6 +7,7 @@
 <script lang="ts">
 import { ref, defineComponent } from 'vue'
 import { ServerTimeResponse } from '../../shared/models'
+
 export default defineComponent({
   name: 'HelloWorld',
   setup: () => {
