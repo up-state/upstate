@@ -3,6 +3,8 @@ import { ServeStaticModule } from '@nestjs/serve-static'
 import path from 'path'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
+import { DBPool } from './database/db-pool/db-pool.service'
+import { Config } from './config/config.service'
 
 @Module({
   imports: [
@@ -12,6 +14,6 @@ import { AppService } from './app.service'
     }),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, DBPool, Config],
 })
 export class AppModule {}

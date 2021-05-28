@@ -5,8 +5,11 @@ node_modules
 tests/e2e/videos/
 tests/e2e/screenshots/
 
+# generated files
+src/server/database/zapatos
 
 # local env files
+.env
 .env.local
 .env.*.local
 
